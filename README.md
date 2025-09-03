@@ -1,95 +1,107 @@
-Desafio Full Stack - Gestão de Leads
-Este repositório contém a solução completa para o Desafio Full Stack, que consiste numa aplicação de página única (SPA) para a gestão de leads de uma empresa.
+# Desafio Full Stack - Gestão de Leads
 
-A aplicação permite visualizar leads "convidados", aceitá-los ou recusá-los, e ver uma lista separada de leads que foram aceites. A lógica de negócio inclui uma regra de desconto de 10% para leads com preço superior a $500.
+Este repositório contém a solução completa para o **Desafio Full Stack**, que consiste numa aplicação **SPA (Single Page Application)** para a **gestão de leads** de uma empresa.
 
-Funcionalidades
-Visualização de Leads: Interface com duas abas principais: "Invited" e "Accepted".
+A aplicação permite visualizar leads "convidados", aceitá-los ou recusá-los, e acompanhar uma lista separada de leads aceitos.  
+Além disso, existe uma **regra de negócio**: leads com preço superior a **$500** recebem um **desconto de 10%** automaticamente.
 
-Ações de Gestão:
+---
 
-Aceitar Lead: Move um lead da lista de convidados para a de aceites. Aplica um desconto de 10% se o preço for superior a $500.
+## 🚀 Funcionalidades
 
-Recusar Lead: Remove um lead da lista de convidados.
+- **Visualização de Leads**
+  - Interface com duas abas: **Invited** e **Accepted**.
 
-Comunicação em Tempo Real: O frontend consome uma API RESTful para todas as operações, atualizando a interface de forma dinâmica.
+- **Gestão de Leads**
+  - ✅ Aceitar Lead → move da aba *Invited* para *Accepted* (com desconto de 10% se > $500).  
+  - ❌ Recusar Lead → remove da lista de convidados.
 
-Testes Unitários: A camada de testes garante que a lógica de negócio crítica (regra do desconto) funciona como esperado.
+- **Comunicação em Tempo Real**
+  - O frontend consome uma API RESTful, atualizando a interface de forma dinâmica.
 
-Tecnologias Utilizadas
-O projeto foi construído seguindo as melhores práticas e utilizando tecnologias modernas:
+- **Testes Unitários**
+  - Garantem que a lógica de negócio (como o desconto) funciona corretamente.
 
-Backend:
+---
 
-.NET Core (ASP.NET Core Web API)
+## 🛠️ Tecnologias Utilizadas
 
-Entity Framework Core (ORM)
+### Backend
+- [.NET 8 (ASP.NET Core Web API)](https://learn.microsoft.com/aspnet/core)  
+- [Entity Framework Core](https://learn.microsoft.com/ef/core)
 
-Frontend:
+### Frontend
+- [React](https://react.dev/) (com [Vite](https://vitejs.dev/))  
+- [Tailwind CSS](https://tailwindcss.com/)
 
-React com Vite
+### Base de Dados
+- [SQL Server](https://www.microsoft.com/sql-server) (Express é suficiente)
 
-Tailwind CSS para estilização
+### Testes
+- [xUnit](https://xunit.net/)
 
-Base de Dados:
+---
 
-SQL Server
+## 📦 Pré-requisitos
 
-Testes:
+Antes de rodar o projeto, garanta que você tem instalado:
 
-xUnit
+- [.NET SDK 8.0+](https://dotnet.microsoft.com/download)
+- [Node.js 18+](https://nodejs.org/)
+- [SQL Server](https://www.microsoft.com/sql-server)
 
-Pré-requisitos
-Para executar este projeto, certifique-se de que tem os seguintes softwares instalados:
+---
 
-.NET SDK (versão 8.0 ou superior)
+## ⚙️ Como Executar o Projeto
 
-Node.js e npm (versão 18.x ou superior)
-
-SQL Server (a versão Express é suficiente)
-
-Como Executar o Projeto
-Siga os passos abaixo para configurar e executar a aplicação localmente.
-
-1. Clonar o Repositório
-git clone [https://github.com/LuizzGIT/desafio-leads-dti.git](https://github.com/LuizzGIT/desafio-leads-dti.git)
+### 1. Clonar o Repositório
+```bash
+git clone https://github.com/LuizzGIT/desafio-leads-dti.git
 cd desafio-leads-dti
+```
+### 2. Configurar e Executar o Backend
 
-2. Configurar e Executar o Backend
-O backend precisa de criar a base de dados a partir das migrações do Entity Framework.
-
-# Navegue para a pasta do projeto backend
+O backend cria a base de dados a partir das migrações do Entity Framework.
+```bash
+# Acesse a pasta do backend
 cd Backend/Backend
 
-# Restaure as dependências do .NET
+# Restaure dependências
 dotnet restore
 
-# Aplique as migrações para criar a base de dados "LeadsDB"
+# Aplique as migrações (cria a base "LeadsDB")
 dotnet ef database update
 
-# Inicie o servidor da API
+# Inicie a API
 dotnet run
+```
 
-O servidor backend estará agora a ser executado em http://localhost:5000.
+➡️ O backend estará rodando em: http://localhost:5000
 
-3. Configurar e Executar o Frontend
-Abra um novo terminal na raiz do projeto.
+### 3. Configurar e Executar o Frontend
 
-# Navegue para a pasta do projeto frontend
+Abra outro terminal, na raiz do projeto:
+
+```bash
+# Acesse a pasta do frontend
 cd frontend
 
-# Instale as dependências do Node.js
+# Instale dependências
 npm install
 
-# Inicie o servidor de desenvolvimento do React
+# Rode o servidor de desenvolvimento
 npm run dev
+```
+➡️ O frontend estará disponível em: http://localhost:5173
 
-A aplicação frontend estará agora disponível no seu navegador em http://localhost:5173.
+### 4. Executar os Testes Unitários
 
-4. Executar os Testes Unitários
-Para verificar a integridade da lógica de negócio do backend, pode executar os testes unitários.
-
-# A partir da pasta raiz do projeto (ProjetoDTI)
+Na raiz do projeto:
+```bash
 dotnet test
+```
+## 👨‍💻 Autor
 
-Projeto desenvolvido por Luiz Henrique Magalhães como parte de um processo seletivo.
+Projeto desenvolvido por Luiz Henrique Magalhães   
+
+   📌 Como parte de um processo seletivo.
